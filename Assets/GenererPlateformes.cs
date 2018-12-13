@@ -69,8 +69,7 @@ public class GenererPlateformes : MonoBehaviour {
     void ChoixDispo(GameObject bloc)
     {
         print("ChoixDispo");
-        //var dispo = Random.Range(1, 13);
-        var dispo = 1;
+        var dispo = Random.Range(1, 13);
 
         switch (dispo)
         {
@@ -117,7 +116,6 @@ public class GenererPlateformes : MonoBehaviour {
     //1ere Disposition
     void Simple(GameObject bloc)
     {
-        print("SIMPLE");
         float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
         float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
@@ -139,66 +137,310 @@ public class GenererPlateformes : MonoBehaviour {
     //2eme Disposition
     void Double(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+
+        plateformeAvant = plateforme;
+
+
+        plateforme = Instantiate(bloc);
+
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y);
+
+        plateformeAvant = plateforme;
     }
 
     //3eme Disposition
     void Triple(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+
+        plateformeAvant = plateforme;
+
+        for (int i = 0; i < 2; i++)
+        {
+            plateforme = Instantiate(bloc);
+
+            plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y);
+
+            plateformeAvant = plateforme;
+        }
     }
 
     //4eme Disposition
     void Pyramide(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y - plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
     }
 
     //5eme Disposition
     void PyramideRenverse(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y - plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
     }
 
     //6eme Disposition
     void UnDeux(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y - plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y);
+        plateformeAvant = plateforme;
     }
 
     //7eme Disposition
     void DeuxUn(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
     }
 
     //8eme Disposition
     void LettreJ(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
     }
 
     //9eme Disposition
     void LettreL(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x, plateformeAvant.transform.position.y - plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y - plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
     }
 
     //10eme Disposition
     void DiagonalDroite(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
     }
 
     //11eme Disposition
     void DiagonaleGauche(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y - plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y - plateforme.GetComponent<Renderer>().bounds.size.y);
+        plateformeAvant = plateforme;
     }
 
     //12eme Disposition
     void Trou(GameObject bloc)
     {
+        float posX = Random.Range(plateformeAvant.transform.position.x + 2, plateformeAvant.transform.position.x + 5);
+        float posY = Random.Range(plateformeAvant.transform.position.y - 3, plateformeAvant.transform.position.y + 3);
 
+        if (posY < -4.3)
+        {
+            posY = -4.3f;
+        }
+        else if (posY > 5.42)
+        {
+            posY = 5.42f;
+        }
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(posX, posY);
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y + (plateforme.GetComponent<Renderer>().bounds.size.y * 2));
+        plateformeAvant = plateforme;
+
+        plateforme = Instantiate(bloc);
+        plateforme.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y - (plateforme.GetComponent<Renderer>().bounds.size.y * 2));
+        plateformeAvant = plateforme;
     }
 }
