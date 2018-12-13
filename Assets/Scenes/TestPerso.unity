@@ -1046,6 +1046,7 @@ MonoBehaviour:
   maxSpeed: 3
   JumpForce: 2000
   rdb2d: {fileID: 0}
+  surPlancher: 0
 --- !u!1 &2147173059
 GameObject:
   m_ObjectHideFlags: 0
