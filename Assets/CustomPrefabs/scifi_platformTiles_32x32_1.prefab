@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4376804035396198}
   - component: {fileID: 212157557675896134}
+  - component: {fileID: 114268330954606654}
   m_Layer: 0
   m_Name: scifi_platformTiles_32x32_1
   m_TagString: plancher
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114268330954606654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205937599331056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fb9375d1aa1a4498062fb6ee498a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: -5
+  posXMax: {x: -30, y: 0, z: 0}
 --- !u!212 &212157557675896134
 SpriteRenderer:
   m_ObjectHideFlags: 1

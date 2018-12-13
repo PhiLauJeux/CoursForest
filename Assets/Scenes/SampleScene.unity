@@ -353,7 +353,7 @@ MonoBehaviour:
     type: 2}
   plateforme7: {fileID: 1660146004697940, guid: 2482dc8620abd3c42931ef1140db1d0e,
     type: 2}
-  vitesse: 2
+  vitesse: 0.5
 --- !u!1 &488739350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2067276047}
+  - component: {fileID: 2067276048}
   m_Layer: 0
   m_Name: PlateformeDepart
   m_TagString: Untagged
@@ -1697,6 +1698,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2067276048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067276046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fb9375d1aa1a4498062fb6ee498a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesse: -5
+  posXMax: {x: -30, y: 0, z: 0}
 --- !u!1 &2073044630
 GameObject:
   m_ObjectHideFlags: 0
