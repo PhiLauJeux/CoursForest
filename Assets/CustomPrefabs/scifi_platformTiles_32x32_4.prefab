@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212784040940843420}
   m_Layer: 0
   m_Name: scifi_platformTiles_32x32_4
-  m_TagString: Untagged
+  m_TagString: plancher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
