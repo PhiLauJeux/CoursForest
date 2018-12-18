@@ -34,7 +34,6 @@ public class GenererPlateformes : MonoBehaviour {
 
     void ChoixBloc()
     {
-        print("ChoixBloc");
         var bloc = Random.Range(1, 8);
 
         switch (bloc)
@@ -68,7 +67,6 @@ public class GenererPlateformes : MonoBehaviour {
 
     void ChoixDispo(GameObject bloc)
     {
-        print("ChoixDispo");
         var dispo = Random.Range(1, 13);
 
         switch (dispo)

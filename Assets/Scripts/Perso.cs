@@ -22,10 +22,29 @@ public class Perso : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
+        Debug.DrawLine(transform.position - new Vector3(0, 0.7f, 0), transform.position - new Vector3(0, 0.9f, 0), Color.red);
 		float move = Input.GetAxis ("Horizontal");
 		rdb2d.velocity = new Vector2 (move * maxSpeed, rdb2d.velocity.y);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, 0.7f, 0), -Vector2.up, 0.2f);
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.tag == "plancher")
+            {
+                surPlancher = true;
+            }
+            else
+            {
+                surPlancher = false;
+            }
+        }
+        else
+        {
+            surPlancher = false;
+        }
 	}
-	void OnCollisionEnter2D(Collision2D col){
+	/*void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "plancher") {
 			surPlancher = true;
 		}
@@ -34,5 +53,5 @@ public class Perso : MonoBehaviour {
 		if (col.gameObject.tag == "plancher") {
 			surPlancher = false;
 		}
-	}
+	}*/
 }
