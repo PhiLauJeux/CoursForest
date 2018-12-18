@@ -14,24 +14,32 @@ public class GenererPlateformes : MonoBehaviour {
     public GameObject plateforme6;
     public GameObject plateforme7;
 
+	public GameObject coinOriginal;
+
     public float vitesse;
 
     private GameObject blocChoisi;
     private GameObject plateforme;
     private GameObject plateformeAvant;
+	private GameObject coinClone;
 
     // Use this for initialization
     void Start () {
         print("START");
         plateformeAvant = plateformeDepart;
         InvokeRepeating("ChoixBloc", 0, vitesse);
+		InvokeRepeating ("CoinHazard", 0, vitesse);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
+	void CoinHazard(){
+		coinClone = Instantiate(coinOriginal);
+		coinClone.transform.position = new Vector2(plateformeAvant.transform.position.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+		coinClone.SetActive(true);
+	}
     void ChoixBloc()
     {
         var bloc = Random.Range(1, 8);
