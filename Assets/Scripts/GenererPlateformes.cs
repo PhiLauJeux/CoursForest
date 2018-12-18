@@ -28,15 +28,17 @@ public class GenererPlateformes : MonoBehaviour {
         print("START");
         plateformeAvant = plateformeDepart;
         InvokeRepeating("ChoixBloc", 0, vitesse);
+		InvokeRepeating ("CoinHazard", 0, vitesse);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-	void CoinHazard(GameObject coin){
-		coinClone = Instantiate(coin);
-		coinClone.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y);
+	void CoinHazard(){
+		coinClone = Instantiate(coinOriginal);
+		coinClone.transform.position = new Vector2(plateformeAvant.transform.position.x, plateformeAvant.transform.position.y + plateforme.GetComponent<Renderer>().bounds.size.y);
+		coinClone.SetActive(true);
 	}
     void ChoixBloc()
     {
