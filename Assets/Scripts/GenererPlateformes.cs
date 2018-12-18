@@ -14,11 +14,14 @@ public class GenererPlateformes : MonoBehaviour {
     public GameObject plateforme6;
     public GameObject plateforme7;
 
+	public GameObject coinOriginal;
+
     public float vitesse;
 
     private GameObject blocChoisi;
     private GameObject plateforme;
     private GameObject plateformeAvant;
+	private GameObject coinClone;
 
     // Use this for initialization
     void Start () {
@@ -31,7 +34,10 @@ public class GenererPlateformes : MonoBehaviour {
 	void Update () {
 		
 	}
-
+	void CoinHazard(GameObject coin){
+		coinClone = Instantiate(coin);
+		coinClone.transform.position = new Vector2(plateformeAvant.transform.position.x + plateforme.GetComponent<Renderer>().bounds.size.x, plateformeAvant.transform.position.y);
+	}
     void ChoixBloc()
     {
         var bloc = Random.Range(1, 8);

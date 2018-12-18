@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Perso : MonoBehaviour {
 	public float maxSpeed = 1f;
 	public float JumpForce = 700f;
+	public float scoreDistance = 0f;
 	public Rigidbody2D rdb2d;
 	public bool surPlancher = true;
+	public Text Pointage;
 	// Use this for initialization
 	void Start () {
 		rdb2d = gameObject.GetComponent<Rigidbody2D>();
+		InvokeRepeating("TimerSecondes", 1, 1);
 	}
 	
 	// Update is called once per frame
@@ -19,6 +23,7 @@ public class Perso : MonoBehaviour {
 				rdb2d.AddForce (new Vector2 (0, JumpForce));
 			}
 		}
+		Pointage.text = scoreDistance + "";
 	}
 
 	void FixedUpdate () {
@@ -26,7 +31,7 @@ public class Perso : MonoBehaviour {
 		float move = Input.GetAxis ("Horizontal");
 		rdb2d.velocity = new Vector2 (move * maxSpeed, rdb2d.velocity.y);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, 0.7f, 0), -Vector2.up, 0.2f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, 0.7f, 0), -Vector2.up, 0.6f);
 
         if (hit.collider != null)
         {
@@ -44,14 +49,9 @@ public class Perso : MonoBehaviour {
             surPlancher = false;
         }
 	}
-	/*void OnCollisionEnter2D(Collision2D col){
-		if (col.gameObject.tag == "plancher") {
-			surPlancher = true;
-		}
+	void TimerSecondes()
+	{
+		scoreDistance += 1;
 	}
-	void OnCollisionExit2D(Collision2D col){
-		if (col.gameObject.tag == "plancher") {
-			surPlancher = false;
-		}
-	}*/
+	
 }
